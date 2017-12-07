@@ -10,7 +10,7 @@ fun main(args: Array<String>) {
 class MyApp: App(MyView::class)
 
 class MyView: View() {
-    override val root = SankeyPlot().apply {
+    override val root = sankeyplot {
         item("Albuquerque")
         item("Dallas")
         item("Phoenix")

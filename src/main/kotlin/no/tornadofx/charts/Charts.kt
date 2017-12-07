@@ -2,12 +2,17 @@ package no.tornadofx.charts
 
 import eu.hansolo.fx.charts.PlotItem
 import eu.hansolo.fx.charts.SankeyPlot
-import javafx.application.Application
+import javafx.event.EventTarget
 import javafx.scene.paint.Color
-import tornadofx.*
 import java.util.concurrent.ThreadLocalRandom
 
 
+
+fun EventTarget.sankeyplot(op: (SankeyPlot.() -> Unit) = {}): SankeyPlot {
+    val sp = SankeyPlot()
+    sp.op()
+    return sp
+}
 
 fun SankeyPlot.item(name: String, color: Color = randomColor()) {
     val plotItem = PlotItem(name, color)
