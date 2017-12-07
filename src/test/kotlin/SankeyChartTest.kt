@@ -1,5 +1,7 @@
 import eu.hansolo.fx.charts.SankeyPlot
 import javafx.application.Application
+import no.tornadofx.charts.*
+import tornadofx.*
 
 fun main(args: Array<String>) {
     Application.launch(MyApp::class.java, *args)
@@ -9,24 +11,24 @@ class MyApp: App(MyView::class)
 
 class MyView: View() {
     override val root = SankeyPlot().apply {
-        item("ABQ")
-        item("DAL")
-        item("PHX")
-        item("AUS")
-        item("HOU")
-        item("DEN")
+        item("Albuquerque")
+        item("Dallas")
+        item("Phoenix")
+        item("Austin")
+        item("Houston")
+        item("Denver")
 
-        weightPair("ABQ", "DAL", .20)
-        weightPair("ABQ", "AUS", .15)
-        weightPair("ABQ", "HOU", .20)
-        weightPair("ABQ", "DEN", .30)
-        weightPair("ABQ", "AUS", .20)
-        weightPair("ABQ", "PHX", .15)
+        weightPair("Albuquerque", "Dallas", .20)
+        weightPair("Albuquerque", "Austin", .15)
+        weightPair("Albuquerque", "Houston", .20)
+        weightPair("Albuquerque", "Denver", .30)
+        weightPair("Albuquerque", "Austin", .20)
+        weightPair("Albuquerque", "Phoenix", .15)
 
-        weightPair("PHX", "AUS", .20)
-        weightPair("PHX", "DEN", .30)
+        weightPair("Phoenix", "Austin", .20)
+        weightPair("Phoenix", "Denver", .30)
 
-        weightPair("DAL", "DEN", .20)
+        weightPair("Dallas", "Denver", .20)
 
         streamFillMode = SankeyPlot.StreamFillMode.GRADIENT
     }
